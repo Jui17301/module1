@@ -1,3 +1,5 @@
+{
+  //
 // Basic Data type
 
 
@@ -53,3 +55,56 @@ numbers =[1,2];
  }
 
 
+// Function :(Build in Block),
+function add(num1:number,num2:number=0):number{
+  return num1+num2;
+}
+const addArrow =(num1:number,num2:number=0):number => num1+num2;
+add(2,4)
+
+
+//obj-> function ->called method
+
+const poorUser ={
+  name:'Jui',
+  balance :0,
+  addBalance(balance :number):string{
+    return `My New Balance is :${this.balance+ balance}`
+  }
+};
+
+
+//Map
+
+const arr:number[]=[1,2,3]
+const newArray :number[] = arr.map((element:number):number => element*element);
+
+
+//Spread operator
+const bros1 :string[]=['x','y'];
+const bros2 :string[]=['a','b'];
+bros1.push(...bros2);
+
+const mentor1={
+  typescript:'Mezba',
+  redux:'Mir',
+}
+const mentor2={
+  prisma:'Firoz'
+}
+const mentorList ={
+  ...mentor1,
+  ...mentor2
+}
+
+
+
+// Rest Operator:
+const greetFriends =(...friends:string[])=>{
+  friends.forEach((friend:string)=> console.log(`Hi ${friend}`))
+};
+greetFriends('x','y','z');
+
+
+//
+}
