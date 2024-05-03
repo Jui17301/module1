@@ -106,5 +106,24 @@ const greetFriends =(...friends:string[])=>{
 greetFriends('x','y','z');
 
 
+// obj Destructuring
+const userAddress ={
+  id:1,
+  name:{
+    fName :'Sumaiya',
+  lastName: 'Jui',
+  },
+  contactNo:'1223',
+}
+const {contactNo,
+  name:{fName,lastName:lName}, //name alias
+}=userAddress;
+
+
+// array Destructuring
+const myFriends =['x','y','z','a','b','c'];
+
+const [, ,bestFriend,...rest]=myFriends;
+
 //
 }
