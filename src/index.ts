@@ -125,5 +125,32 @@ const myFriends =['x','y','z','a','b','c'];
 
 const [, ,bestFriend,...rest]=myFriends;
 
-//
+//alias Type
+type Student={
+  name:string;
+  age:number;
+  contact?:number;
+}
+const student1:Student={
+  name:'Jui',
+  age:16,
+  contact :908765,
+}
+const student2:Student={
+  name:'Juiiiii',
+  age:19,
+}
+
+
+type UserName =string;
+type IsAdmin =boolean;
+const userName :UserName ='Jui';
+const isAdmin:IsAdmin =true;
+
+
+type Sub =(a:number,b:number)=>number
+const sub:Sub=(a,b)=> a+b;
+
+
+
 }
