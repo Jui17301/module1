@@ -24,7 +24,7 @@ let a:number
 a=345;
 
 
-// Non-Primitive dataType:
+// Non-Primitive dataType or Reference Type:
 
 //Array
 let friends:string[] = ['rachel','monica'];
@@ -37,6 +37,19 @@ let profileCoordinate :[string,number,boolean] =['Jui',1234,true];
 let numbers :[number,number];
 numbers =[1,2];
 
+// Object
+ const user:{
+  firstName : string;
+  middleName?: string;//optional type
+  lastName : string;
+  isMarried :boolean;
+ readonly company : string;//literal Type 
+ } ={
+  firstName :'Sumaiya',
+  lastName: 'Jui',
+  company:"Programming Hero",
+  isMarried: true,
 
+ }
 
 
