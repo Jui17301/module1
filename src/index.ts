@@ -10,7 +10,7 @@ let firstName:string ="Jui"
 // number
 let roll:number=123;
 // boolean
-let isAdmin = true;
+let isAdminn = true;
 // undefined
 let x: undefined =undefined;
 // null
@@ -140,16 +140,63 @@ const student2:Student={
   name:'Juiiiii',
   age:19,
 }
-
-
 type UserName =string;
 type IsAdmin =boolean;
 const userName :UserName ='Jui';
 const isAdmin:IsAdmin =true;
 
-
 type Sub =(a:number,b:number)=>number
 const sub:Sub=(a,b)=> a+b;
+
+// Union :(|) like OR
+type FrontendDeveloper = 'fakibazDeveloper' | 'juniorDeveloper'  //name alias
+ type FullstackDeveloper = 'frontendDeveloper' | 'expertDeveloper'
+ type Developer = FrontendDeveloper | FullstackDeveloper
+const newDeveloper : FrontendDeveloper = 'juniorDeveloper'  //type alias 
+
+ type User ={
+    name: string;
+    email?: string;
+    gender:"male"| "female";
+    bloodGroup:"O+"|"A+"|"AB+"
+  }
+  const user1: User ={
+    name:'persian',
+    gender:'male',
+    bloodGroup:'O+'
+  }
+
+  // Intersection Type:(&) like AND  -> join
+  type FrontDeveloper = {
+    skills: string[];
+    designation1: "Frontend Developer";
+  };
+
+  type BackDeveloper = {
+    skills: string[];
+    designation2: "Backend Developer";
+  };
+
+  type FullDeveloper = FrontDeveloper & BackDeveloper;
+
+  const fullDeveloper: FullDeveloper = {
+    skills: ["HTML", "CSS", "EXPRESS"],
+    designation1: "Frontend Developer",
+    designation2: "Backend Developer",
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
