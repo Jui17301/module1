@@ -149,7 +149,7 @@ type Sub =(a:number,b:number)=>number
 const sub:Sub=(a,b)=> a+b;
 
 // Union :(|) like OR
-type FrontendDeveloper = 'fakibazDeveloper' | 'juniorDeveloper'  //name alias
+type FrontendDeveloper = 'fakibazDeveloper' | 'juniorDeveloper'  //name alias and string literal type
  type FullstackDeveloper = 'frontendDeveloper' | 'expertDeveloper'
  type Developer = FrontendDeveloper | FullstackDeveloper
 const newDeveloper : FrontendDeveloper = 'juniorDeveloper'  //type alias 
@@ -161,15 +161,15 @@ const newDeveloper : FrontendDeveloper = 'juniorDeveloper'  //type alias
     bloodGroup:"O+"|"A+"|"AB+"
   }
   const user1: User ={
-    name:'persian',
-    gender:'male',
+    name:'jui',
+    gender:'female',
     bloodGroup:'O+'
   }
 
-  // Intersection Type:(&) like AND  -> join
+  // Intersection Type:(&) like AND  -> join -> common property
   type FrontDeveloper = {
     skills: string[];
-    designation1: "Frontend Developer";
+    designation1: "Frontend Developer"; //string literal
   };
 
   type BackDeveloper = {
@@ -187,17 +187,91 @@ const newDeveloper : FrontendDeveloper = 'juniorDeveloper'  //type alias
 
 
 
+// Ternary Operator:(?)
+
+const age: number = 18;
+const isAdult = age >= 18 ? "adult" : "not adult";
+console.log({ isAdult });
+
+//nullish coalescing operator:(??)
+  // null / undefined ---> decision making
+
+  const isAuthenticated = "";
+
+  const result1 = isAuthenticated ?? "Guest";
+  const result2 = isAuthenticated ? isAuthenticated : "Guest";
+  console.log({ result1 }, { result2 });
+
+  // optional chaining :(?.)
+  type UserAdd = {
+    name: string;
+    location: {
+      city: string;
+      road: string;
+      permanentAddress?: string;
+    };
+  };
+
+  const userAdd: UserAdd = {
+    name: "xyz",
+    location: {
+      city: "ctg",
+      road: "Awesome Road",
+
+    },
+  };
+
+  const permanentAddress =
+    userAdd?.location?.permanentAddress ?? "No Permanent Address";
+  console.log({ permanentAddress });
 
 
 
+  // nullable types
+  const searchName = (value: string | null) => {
+    if (value) {
+      console.log("Searching");
+    } else {
+      console.log("There is nothing to search");
+    }
+  };
+  searchName(null);
 
+   // unknown  typeof
 
+   const getSpeedInMeterPerSecond = (value: unknown) => {
+    if (typeof value === "number") {
+      const convertedSpeed = (value * 1000) / 3600;
+      console.log(`The speed is ${convertedSpeed} ms^-1`);
+    } else if (typeof value === "string") {
+      const [result, unit] = value.split(" ");
+      const convertedSpeed = (parseFloat(result) * 1000) / 3600;
+      console.log(`The speed is ${convertedSpeed} ms^-1`);
+    } else {
+      console.log("wrong input");
+    }
+  };
+  getSpeedInMeterPerSecond(null);
 
+  //never type
+  const throwError = (msg: string): never => {
+    throw new Error(msg);
+  };
 
+  throwError("mushkil se error hogaya");
 
+  //
 
-
-
-
-
+  //
 }
+
+
+
+
+
+
+
+
+
+
+
